@@ -51,7 +51,7 @@ async function uploadCloudState() {
 async function downloadCloudState() {
   if (!currentUser) return;
   const { data, error } = await cloud.from('food_diary_state').select('state').eq('user_id', currentUser.id).maybeSingle();
-  if (error) { console.warn('Could not load synced diary:', error.message); showSyncMessage('同步设置还未完成'); return; }
+  if (error) { console.warn('Could not load synced diary:', error.message); const imported = applyBulkImport({}); saveLocally(); refreshAllViews(); showSyncMessage(imported ? '早餐、零食和食谱已导入' : '同步设置还未完成'); return; }
   const saved = (data && data.state) || {};
   if (saved.days) days = saved.days;
   if (saved.categories) categories = saved.categories;
