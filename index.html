@@ -64,11 +64,11 @@ function makeRecipeList(text,type){const lines=text.split('\n').filter(x=>x.trim
 function switchRecipeView(tab){const isIngredients=tab==='ingredients';el('ingredientsTab').classList.toggle('active',isIngredients);el('stepsTab').classList.toggle('active',!isIngredients);el('recipeViewContent').innerHTML=makeRecipeList(isIngredients?activeRecipe.ingredients:activeRecipe.steps,isIngredients?'ul':'ol')}
 function editViewedRecipe(){closeModal('recipeViewModal');openRecipeEditor()}
 function saveRecipe(){const name=el('recipeName').value.trim(),ingredients=el('recipeIngredients').value.trim(),steps=el('recipeSteps').value.trim();if(!name||!ingredients)return;const item={id:activeRecipe?.id||Date.now(),name,calories:el('recipeCalories').value.trim(),ingredients,steps};if(activeRecipe)recipes=recipes.map(r=>r.id===item.id?item:r);else recipes.push(item);persist();closeModal('recipeModal');renderRecipes()}function deleteRecipe(){recipes=recipes.filter(r=>r.id!==activeRecipe.id);persist();closeModal('recipeModal');renderRecipes()}
-if('serviceWorker' in navigator){navigator.serviceWorker.register('service-worker.js?v=10')}renderHome();renderCalendar();renderWeek();renderFoods();renderRecipes();
-</script><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script><script src="auth-sync.js?v=10"></script><script>
+if('serviceWorker' in navigator){navigator.serviceWorker.register('service-worker.js?v=11')}renderHome();renderCalendar();renderWeek();renderFoods();renderRecipes();
+</script><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script><script src="auth-sync.js?v=11"></script><script>
 /* Import the supplied records locally before cloud sync runs. */
 (function () {
-  const importKey = 'food-diary-import-2026-09';
+  const importKey = 'food-diary-import-2026-09-v2';
   if (localStorage.getItem(importKey) || typeof BULK_IMPORT === 'undefined') return;
   Object.entries(BULK_IMPORT.days).forEach(([date, meals]) => {
     days[date] = { ...(days[date] || {}), ...meals };
