@@ -1,5 +1,5 @@
-const CACHE = 'food-diary-v2';
-const ASSETS = ['./', './index.html', './auth-sync.js', './manifest.webmanifest', './icons/icon-192.png', './icons/icon-512.png'];
+const CACHE = 'food-diary-v3';
+const ASSETS = ['./', './index.html', './auth-sync.js', './manifest.webmanifest', './icon-192.png', './icon-512.png'];
 
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(ASSETS)));
