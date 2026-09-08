@@ -1,4 +1,4 @@
-const CACHE = 'food-diary-v11';
+const CACHE = 'food-diary-v13';
 const ASSETS = ['./', './index.html', './auth-sync.js', './manifest.webmanifest', './icon-192.png', './icon-512.png'];
 
 self.addEventListener('install', event => {
