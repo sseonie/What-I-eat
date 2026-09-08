@@ -69,8 +69,8 @@ function switchRecipeView(tab){const isIngredients=tab==='ingredients';el('ingre
 function editViewedRecipe(){closeModal('recipeViewModal');openRecipeEditor()}
 function openRecipeCategory(){closeModal('recipeModal');el('recipeCategoryName').value='';el('recipeCategoryEmoji').value='';el('recipeCategoryModal').classList.add('open')}function saveRecipeCategory(){const name=el('recipeCategoryName').value.trim(),emoji=el('recipeCategoryEmoji').value.trim()||'🍽️';if(!name||recipeCategories.some(c=>c.name===name))return;recipeCategories.push({name,emoji});persist();closeModal('recipeCategoryModal');openRecipeEditor();el('recipeCategory').value=name;renderRecipes()}
 function saveRecipe(){const name=el('recipeName').value.trim(),ingredients=el('recipeIngredients').value.trim(),steps=el('recipeSteps').value.trim();if(!name||!ingredients)return;const item={id:activeRecipe?.id||Date.now(),name,category:el('recipeCategory').value,calories:el('recipeCalories').value.trim(),ingredients,steps};if(activeRecipe)recipes=recipes.map(r=>r.id===item.id?item:r);else recipes.push(item);persist();closeModal('recipeModal');renderRecipes()}function deleteRecipe(){recipes=recipes.filter(r=>r.id!==activeRecipe.id);persist();closeModal('recipeModal');renderRecipes()}
-if('serviceWorker' in navigator){navigator.serviceWorker.register('service-worker.js?v=15')}renderHome();renderCalendar();renderWeek();renderFoods();renderRecipes();
-</script><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script><script src="auth-sync.js?v=15"></script><script>
+if('serviceWorker' in navigator){navigator.serviceWorker.register('service-worker.js?v=16')}renderHome();renderCalendar();renderWeek();renderFoods();renderRecipes();
+</script><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script><script src="auth-sync.js?v=16"></script><script>
 /* Import the supplied records locally before cloud sync runs. */
 (function () {
   const importKey = 'food-diary-import-2026-09-v3';

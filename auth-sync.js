@@ -1,6 +1,6 @@
 /* Google sign-in and private cross-device sync for My Food Diary. */
-const SUPABASE_URL = 'https://qseicurjosmzwiqtflqr.supabase.co';
-const SUPABASE_PUBLISHABLE_KEY = 'sb_publishable_FxCyxcEM0ImWyfla9bxQEQ_YKGSpDe1';
+const SUPABASE_URL = 'https://xvzcllkrhrnarlfjvamh.supabase.co';
+const SUPABASE_PUBLISHABLE_KEY = 'sb_publishable_eYWpE98cGSgiNKZdZ7l3zA_GZ6L5ToO';
 const cloud = window.supabase.createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY);
 let currentUser = null;
 let syncTimer = null;
